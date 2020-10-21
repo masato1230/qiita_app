@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class Result(models.Model):
+  date = models.DateTimeField
+  key = models.CharField(max_length=240)
+  value = models.IntegerField()
+
+  def __str__(self):
+    return self.key, self.date
+ 
