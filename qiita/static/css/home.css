@@ -1,0 +1,22 @@
+
+/* top */
+.top {
+  padding: 50px;
+}
+
+.top .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top__card {
+  width: 15%;
+  background-color: red;
+  margin: 20px;
+  padding: 20px;
+  height: 250px;
+}
+
+.top__1 {
+  background-color: red;
+}

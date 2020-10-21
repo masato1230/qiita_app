@@ -1,4 +1,8 @@
 /* 全体設定 */
+* {
+  box-sizing: border-box;
+}
+
 
 a {
   text-decoration: none;

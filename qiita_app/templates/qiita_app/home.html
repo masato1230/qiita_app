@@ -1,7 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+  {% static 'css/home.css' %}
+{% endblock customcss %}
 
 {% block content %}
 
-{{ results }}
+<section class="top">
+  <div class="container">
+    {% for result in results %}
+      <div class="top__card top__{{ forloop.counter }}">
+        <div class="top__card--inner">
+          <img src="" alt="">
+          {{ forloop.counter }}位:{{ result.key }}
+          <p>{{ result.value }}記事</p>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+</section>
+
 
 {% endblock content %}
