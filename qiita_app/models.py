@@ -7,4 +7,12 @@ class Result(models.Model):
 
   def __str__(self):
     return (str(self.key) + "   " + str(self.date))
+
+class ResultLonger(models.Model):
+  date = models.DateTimeField(auto_now=True, editable=True)
+  key = models.CharField(max_length=240)
+  value = models.IntegerField()
+
+  def __str__(self):
+    return (str(self.key) + "   " + str(self.date))
  

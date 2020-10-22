@@ -57,3 +57,7 @@ def update(request):
     result.save()
     
   return redirect(home)
+
+def longer(request):
+  
+  return render(request, 'longer.html', {})
