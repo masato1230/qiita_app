@@ -7,7 +7,12 @@ from .models import Result, ResultLonger
 
 
 def home(request):
-  results = Result.objects.all()[:10]
+  results = Result.objects.all().order_by("-id")[:10]
+  results_ordered = []
+  for result in reversed(results):
+    results_ordered.append(result)
+  results = results_ordered
+  print(results)
   logos = ["Python", "Ruby", "AWS", "CSS", "Rails", "JavaScript", "Docker", "PHP", "Laravel", "Swift", "MySQL", "Java", "Git", "HTML"]
   exist_logos = []
   need_update = False
@@ -63,7 +68,11 @@ def update(request):
 
 
 def longer(request):
-  results = ResultLonger.objects.filter(date__date=date.today())[:100]
+  results = ResultLonger.objects.all().order_by("-id")[:100]
+  results_ordered = []
+  for result in reversed(results):
+    results_ordered.append(result)
+  results = results_ordered
   logos = ["Python", "Ruby", "AWS", "CSS", "Rails", "JavaScript", "Docker", "PHP", "Laravel", "Swift", "MySQL", "Java", "Git", "HTML"]
   exist_logos = []
   need_update = False
