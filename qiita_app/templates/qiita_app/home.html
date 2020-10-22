@@ -9,6 +9,11 @@
 
 <section class="top">
   <div class="container">
+    <p class="top__desc">
+      プログラマのための技術情報共有サービスQiitaにおいて、最もトレンドが強いプログラミング言語や技術をランキング化しています。
+      更新ボタン(ランキングを更新する！)を押すことで、最新のランキング(1日に一回しか更新することはできません。)に更新することができます。
+    </p>
+    <a class="top__update-button" href="{% url 'update' %}">ランキングを更新する！</a>
     {% for result in results %}
       <div class="top__card top__{{ forloop.counter }}">
         <div class="top__card--inner">
@@ -16,8 +21,8 @@
             {% include 'image.html' %}
           </div>
           <div class="top__card--right">
-            {{ forloop.counter }}位:{{ result.key }}
-            {{ result.value }}記事
+            <h1 class="top__card-title">{{ forloop.counter }}位：  {{ result.key }}</h1>
+            <p class="top__card-number">Qiitaでの記事数：  {{ result.value }}記事</p>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from datetime import date
 import requests
 from collections import Counter
@@ -56,4 +56,4 @@ def update(request):
     result = Result(key=result[0], value=result[1])
     result.save()
     
-  return render(request, 'qiita_app/home.html', {'results': results})
+  return redirect(home)

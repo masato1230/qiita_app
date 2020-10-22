@@ -1,9 +1,25 @@
 
+
 /* top */
 .top {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: rgba(139, 224, 230, 0.3);;
+}
+
+.top__desc {
+  margin-bottom: 50px;
+}
+
+.top__update-button {
+  background-color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 2px solid lightgray; 
+  color:  rgb(43, 84, 106);
+  font-weight: bold;
 }
 
 .top .container {
@@ -35,4 +51,10 @@
   height: 200px;
   width: auto;
   max-width: 100%;
+}
+
+.top__card-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 50px;
 }
