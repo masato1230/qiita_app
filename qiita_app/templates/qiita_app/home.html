@@ -12,9 +12,12 @@
     <p class="top__desc">
       プログラマのための技術情報共有サービスQiitaにおいて、最もトレンドが強いプログラミング言語や技術をランキング化しています。
       更新ボタン(ランキングを更新する！)を押すことで、最新のランキング(1日に一回しか更新することはできません。)に更新することができます。
+      最新の情報に更新されている場合は、更新ボタンは表示されません。
     </p>
     <p class="top__updated-date">最終更新日時(UTC)：  {{ updated_date }}</p>
-    <a class="top__update-button" href="{% url 'update' %}">ランキングを更新する！(30秒)</a>
+    {% if need_update %}
+      <a class="top__update-button" href="{% url 'update' %}">ランキングを更新する！(30秒)</a>
+    {% endif %}
     <div class="top__cards-wrapper">
       {% for result in results %}
         <div class="top__card top__{{ forloop.counter }}">
