@@ -10,7 +10,6 @@ def home(request):
   results = Result.objects.filter(date__date=date.today())[:10]
   logos = ["Python", "Ruby", "AWS", "CSS", "Rails", "JavaScript", "Docker", "PHP", "Laravel", "Swift", "MySQL", "Java", "Git", "HTML"]
   exist_logos = []
-  static_urls = {}
 
   # logo画像があるプログラミング言語をexist_logosに追加
   print(results)
@@ -19,12 +18,13 @@ def home(request):
     print(result.value)
     if result.key in logos:
       exist_logos.append(result.key)
+    # 最終更新日時の取得
+    updated_date = result.date
 
-  print(static_urls)
-  print(exist_logos)
   context = {
     'results': results,
     'exist_logos': exist_logos,
+    'updated_date': updated_date,
   }
   return render(request, 'qiita_app/home.html', context)
 
