@@ -1,0 +1,32 @@
+{% load static %}
+{% if not result.key in exist_logos %}
+  <img class="top__img" src="{% static '/image/noimage.png' %}" alt="noimage">
+{% elif result.key == "CSS" %}
+  <img class="top__img" src="{% static '/image/css.png' %}" alt="css">
+{% elif result.key == "Docker" %}
+  <img class="top__img" src="{% static '/image/docker.png' %}" alt="docker">
+{% elif result.key == "Git" %}
+  <img class="top__img" src="{% static '/image/git.png' %}" alt="git">
+{% elif result.key == "HTML" %}
+  <img class="top__img" src="{% static '/image/html.png' %}" alt="html">
+{% elif result.key == "Java" %}
+  <img class="top__img" src="{% static '/image/java.png' %}" alt="java">
+{% elif result.key == "JavaScript" %}
+  <img class="top__img" src="{% static '/image/javascript.png' %}" alt="javascript">
+{% elif result.key == "Laravel" %}
+  <img class="top__img" src="{% static '/image/laravel.png' %}" alt="laravel">
+{% elif result.key == "MySQL" %}
+  <img class="top__img" src="{% static '/image/mysql.png' %}" alt="mysql">
+{% elif result.key == "PHP" %}
+  <img class="top__img" src="{% static '/image/php.png' %}" alt="php">
+{% elif result.key == "Python" %}
+  <img class="top__img" src="{% static '/image/python.png' %}" alt="python">
+{% elif result.key == "Rails" %}
+  <img class="top__img" src="{% static '/image/rails.png' %}" alt="rails">
+{% elif result.key == "Ruby" %}
+  <img class="top__img" src="{% static '/image/ruby.png' %}" alt="ruby">
+{% elif result.key == "Swift" %}
+  <img class="top__img" src="{% static '/image/swift.png' %}" alt="swift">
+{% elif result.key == "AWS" %}
+  <img class="top__img" src="{% static '/image/aws.png' %}" alt="aws">
+{% endif %}

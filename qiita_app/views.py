@@ -8,11 +8,25 @@ from .models import Result
 
 def home(request):
   results = Result.objects.filter(date__date=date.today())[:10]
+  logos = ["Python", "Ruby", "AWS", "CSS", "Rails", "JavaScript", "Docker", "PHP", "Laravel", "Swift", "MySQL", "Java", "Git", "HTML"]
+  exist_logos = []
+  static_urls = {}
+
+  # logo画像があるプログラミング言語をexist_logosに追加
+  print(results)
   for result in results:
     print(result.key)
     print(result.value)
-  
-  return render(request, 'qiita_app/home.html', {'results': results})
+    if result.key in logos:
+      exist_logos.append(result.key)
+
+  print(static_urls)
+  print(exist_logos)
+  context = {
+    'results': results,
+    'exist_logos': exist_logos,
+  }
+  return render(request, 'qiita_app/home.html', context)
 
 # ランキングを更新するためのアクション
 def update(request):
