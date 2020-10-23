@@ -122,5 +122,6 @@ def longerUpdate(request):
 
 
 def graph(request):
-  utils.get_graph(request)
-  return render(request, 'qiita_app/graph.html', {})
+  utils.create_graph(request)
+  graph = utils.get_graph()
+  return render(request, 'qiita_app/graph.html', {'graph': graph})

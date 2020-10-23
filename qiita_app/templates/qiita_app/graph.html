@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+  {% static 'css/graph.css' %}
+{% endblock customcss %}
+
+{% block content %}
+<section class="top">
+  <div class="container">
+    <h1 class="top__title">QiitaトレンドランキングTOP15</h1>
+    <img class="top__img" src="data:image/png;base64, {{ graph | safe }} " alt="">
+  </div>
+</section>
+{% endblock content %}
