@@ -6,4 +6,5 @@ urlpatterns = [
     path('update/', views.update, name='update'),
     path('longer/', views.longer, name='longer'),
     path('longer_update/', views.longerUpdate, name='longerUpdate'),
+    path('graph/', views.graph, name='graph'),
 ]

@@ -33,9 +33,14 @@ a {
   font-weight: bold;
 }
 
+.header__links {
+  display: flex;
+}
+
 .header__link {
   color: aliceblue;
   line-height: 60px;
+  margin-left: 50px;
 }
 
 

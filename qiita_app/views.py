@@ -3,6 +3,7 @@ from datetime import date, datetime, timezone, timedelta
 import requests
 from collections import Counter
 from .models import Result, ResultLonger
+from . import utils
 
 
 
@@ -118,3 +119,8 @@ def longerUpdate(request):
     result = ResultLonger(key=result[0], value=result[1])
     result.save()
   return redirect(longer)
+
+
+def graph(request):
+  utils.get_graph(request)
+  return render(request, 'qiita_app/graph.html', {})

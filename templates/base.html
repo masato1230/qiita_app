@@ -18,7 +18,10 @@
           <a href="{% url 'home' %}"><h1 class="header__title">最新プログラミング言語・技術ランキング</h1></a>
         </div>
         <div class="header__right">
-          <a class="header__link" href="{% url 'longer' %}">100位までのランキングを見る</a>
+          <ul class="header__links">
+            <li><a class="header__link" href="{% url 'longer' %}">100位までのランキングを見る</a></li>
+            <li><a class="header__link" href="{% url 'graph' %}">グラフを見る</a></li>
+          </ul>
         </div>
       </nav>
     </div>
