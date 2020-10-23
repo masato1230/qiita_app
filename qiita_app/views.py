@@ -10,6 +10,7 @@ from . import utils
 def home(request):
   results = Result.objects.all().order_by("-id")[:10]
   results_ordered = []
+  updated_date = None
   for result in reversed(results):
     results_ordered.append(result)
   results = results_ordered
@@ -27,7 +28,10 @@ def home(request):
     # 最終更新日時の取得
     updated_date = result.date
 
-  if datetime.now(timezone.utc) - updated_date > timedelta(hours=10):
+  if updated_date:
+    if datetime.now(timezone.utc) - updated_date > timedelta(hours=10):
+      need_update = True
+  else:
     need_update = True
 
   context = {
@@ -56,12 +60,9 @@ def update(request):
   print(Counter(tag_list))
   results = Counter(tag_list).most_common(10)
   print(len(tag_list))
-  print(res[1]['created_at'])
-  print(res[-1]['created_at'])
 
 
   for result in results:
-    print(result)
     result = Result(key=result[0], value=result[1])
     result.save()
   
@@ -71,6 +72,7 @@ def update(request):
 def longer(request):
   results = ResultLonger.objects.all().order_by("-id")[:100]
   results_ordered = []
+  updated_date = None
   for result in reversed(results):
     results_ordered.append(result)
   results = results_ordered
@@ -84,7 +86,10 @@ def longer(request):
     # 最終更新日時の取得
     updated_date = result.date
 
-  if datetime.now(timezone.utc) - updated_date > timedelta(hours=10):
+  if updated_date:
+    if datetime.now(timezone.utc) - updated_date > timedelta(hours=10):
+      need_update = True
+  else:
     need_update = True
 
   context = {
@@ -110,7 +115,7 @@ def longerUpdate(request):
       tags = res[i]['tags']
       for tag in tags:
         tag_list.append(tag['name'])
-      print(i)
+    print(i)
   print(Counter(tag_list))
   results = Counter(tag_list).most_common(100)
   print(len(tag_list))
