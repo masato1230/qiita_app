@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block customcss %}
-  {% static 'css/home.css' %}
+  {% static 'css/longer.css' %}
 {% endblock customcss %}
 
 {% block content %}
@@ -16,7 +16,7 @@
     </p>
     <p class="top__updated-date">最終更新日時(UTC)：  {{ updated_date }}</p>
     {% if need_update %}
-      <a class="top__update-button" href="{% url 'update' %}">ランキングを更新する！(1分)</a>
+      <a class="top__update-button" href="{% url 'longerUpdate' %}">ランキングを更新する！(3分)</a>
     {% endif %}
     <div class="top__cards-wrapper">
       {% for result in results %}
