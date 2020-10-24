@@ -97,7 +97,7 @@ def longer(request):
 
 # ランキングを更新するためのアクション
 def longerUpdate(request):
-  PER_PAGE = "30"
+  PER_PAGE = "100"
   tag_list = []
   ACCESS_TOKEN = "Bearer f339bc4f73e81b17c450325c0d52c44db52f160a"
 
