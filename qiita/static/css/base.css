@@ -50,6 +50,7 @@ a {
   height: 120px;
   width: 100%;
   padding: 50px;
+  text-align: center;
 }
 
 .footer__name {
