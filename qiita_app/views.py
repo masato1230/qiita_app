@@ -97,11 +97,11 @@ def longer(request):
 
 # ランキングを更新するためのアクション
 def longerUpdate(request):
-  PER_PAGE = "100"
+  PER_PAGE = "30"
   tag_list = []
   ACCESS_TOKEN = "Bearer f339bc4f73e81b17c450325c0d52c44db52f160a"
 
-  for page in range(1, 100):
+  for page in range(1, 20):
     page = str(page)
     url = "https://qiita.com/api/v2/items?page=" + page + "&per_page=" + PER_PAGE
     res = requests.get(url, headers={"Authorization": ACCESS_TOKEN}).json()

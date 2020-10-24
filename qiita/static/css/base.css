@@ -43,6 +43,10 @@ a {
   margin-left: 50px;
 }
 
+.header__height {
+  height: 60px;
+}
+
 
 /* footer */
 .footer {
@@ -55,4 +59,22 @@ a {
 
 .footer__name {
   color: white;
+}
+
+@media screen and (max-width: 850px){
+  /* header */
+  .header{
+    height: 200px;
+  }
+  .header__inner {
+    display: block;
+  }
+  .header__links {
+    display: block;
+  }
+  .header__height {
+    height: 200px;
+  }
+
+  /*  */
 }

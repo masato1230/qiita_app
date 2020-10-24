@@ -61,3 +61,21 @@
   margin-bottom: 20px;
   font-size: 50px;
 }
+
+@media screen and (max-width: 850px) {
+  .top__card {
+    height: 50px;
+    padding: 5px;
+    margin: 8px;
+  }
+  .top__card-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .top__card-number {
+    font-size: 8px;
+  }
+  .top__img {
+    height: 40px;
+  }
+}
