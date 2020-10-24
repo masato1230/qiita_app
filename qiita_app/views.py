@@ -14,15 +14,12 @@ def home(request):
   for result in reversed(results):
     results_ordered.append(result)
   results = results_ordered
-  print(results)
   logos = ["Python", "Ruby", "AWS", "CSS", "Rails", "JavaScript", "Docker", "PHP", "Laravel", "Swift", "MySQL", "Java", "Git", "HTML"]
   exist_logos = []
   need_update = False
 
   # logo画像があるプログラミング言語をexist_logosに追加
   for result in results:
-    print(result.key)
-    print(result.value)
     if result.key in logos:
       exist_logos.append(result.key)
     # 最終更新日時の取得
@@ -56,10 +53,7 @@ def update(request):
       tags = res[i]['tags']
       for tag in tags:
         tag_list.append(tag['name'])
-        print(tag['name'])
-  print(Counter(tag_list))
   results = Counter(tag_list).most_common(10)
-  print(len(tag_list))
 
 
   for result in results:
@@ -115,10 +109,7 @@ def longerUpdate(request):
       tags = res[i]['tags']
       for tag in tags:
         tag_list.append(tag['name'])
-    print(i)
-  print(Counter(tag_list))
   results = Counter(tag_list).most_common(100)
-  print(len(tag_list))
 
   for result in results:
     result = ResultLonger(key=result[0], value=result[1])
